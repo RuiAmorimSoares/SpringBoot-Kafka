@@ -1,0 +1,9 @@
+server:
+  port: 8100
+
+spring:
+  application:
+    name: consumer-string-serializer
+  kafka:
+    consumer:
+      bootstrap-servers: localhost:29092
