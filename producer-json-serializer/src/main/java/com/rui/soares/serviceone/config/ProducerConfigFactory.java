@@ -31,6 +31,7 @@ public class ProducerConfigFactory {
     @Bean
     public ProducerFactory<String, Object> producerFactory() {
         final var configs = kafkaProperties.buildProducerProperties();
+        // Configure the broker
         configs.put(ProducerConfig.BOOTSTRAP_SERVERS_CONFIG, kafkaProperties.getBootstrapServers());
         configs.put(ProducerConfig.KEY_SERIALIZER_CLASS_CONFIG, StringSerializer.class);
         configs.put(ProducerConfig.VALUE_SERIALIZER_CLASS_CONFIG, JsonSerializer.class);

@@ -23,6 +23,7 @@ public class KafkaConfigAdmin {
     @Bean
     public KafkaAdmin kafkaAdmin() {
         final var configs = new HashMap<String, Object>();
+        // Configure the broker
         configs.put(AdminClientConfig.BOOTSTRAP_SERVERS_CONFIG, properties.getBootstrapServers());
         return new KafkaAdmin(configs);
     }

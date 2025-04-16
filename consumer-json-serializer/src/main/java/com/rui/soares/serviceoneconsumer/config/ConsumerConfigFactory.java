@@ -33,6 +33,7 @@ public class ConsumerConfigFactory {
         // Optional: deserializer.setRemoveTypeHeaders(false); // depends on your producer
 
         Map<String, Object> props = new HashMap<>();
+        // Configure the broker
         props.put(ConsumerConfig.BOOTSTRAP_SERVERS_CONFIG, kafkaProperties.getBootstrapServers());
         props.put(ConsumerConfig.KEY_DESERIALIZER_CLASS_CONFIG, StringDeserializer.class.getName());
         props.put(ConsumerConfig.VALUE_DESERIALIZER_CLASS_CONFIG, JsonDeserializer.class.getName());
